@@ -5,6 +5,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"github.com/labstack/echo/v4"
 	"lineserver/helpers"
 	"log"
 	"net/http"
@@ -42,7 +43,6 @@ func main() {
 
 	log.Printf("Listening on %s...\n", *address)
 	app.Logger.Fatal(app.Start(*address))
-	//app.Start(":8080")
 }
 
 func (fs FilesStore) getStore(filePath string) (FilesStore, error) {
